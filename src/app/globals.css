@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0a0a0b;
+  --ink-soft: #111214;
+  --ink-line: rgba(255, 255, 255, 0.1);
+  --ink-line-soft: rgba(255, 255, 255, 0.06);
+
+  --paper: #fbfaf7;
+  --paper-dim: #f2efe8;
+  --paper-line: rgba(10, 9, 7, 0.1);
+  --paper-line-soft: rgba(10, 9, 7, 0.06);
+
+  --text-dark: #0a0a0b;
+  --text-dark-muted: #5c5a54;
+  --text-light: #f7f5f0;
+  --text-light-muted: #a7a49c;
+
+  --gold-200: #f6dca3;
+  --gold-300: #efc477;
+  --gold-400: #e2a74d;
+  --gold-500: #cf8d2f;
+  --gold-600: #a86a1e;
+  --gold-700: #7c4d16;
+
+  --background: var(--paper);
+  --foreground: var(--text-dark);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-text-dark: var(--text-dark);
+  --color-text-dark-muted: var(--text-dark-muted);
+  --color-text-light: var(--text-light);
+  --color-text-light-muted: var(--text-light-muted);
+  --color-gold-200: var(--gold-200);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-gold-700: var(--gold-700);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--gold-400);
+  color: var(--ink);
+}
+
+.eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.heading-display {
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.heading-xl {
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.hairline-dark {
+  border-color: var(--ink-line);
+}
+
+.hairline-light {
+  border-color: var(--paper-line);
+}
+
+.grid-overlay {
+  background-image: linear-gradient(
+      to right,
+      var(--ink-line-soft) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--ink-line-soft) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.grid-overlay-light {
+  background-image: linear-gradient(
+      to right,
+      var(--paper-line-soft) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--paper-line-soft) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.glow {
+  background: radial-gradient(
+    60% 50% at 50% 0%,
+    rgba(207, 141, 47, 0.28) 0%,
+    rgba(207, 141, 47, 0) 70%
+  );
+}
+
+.text-gradient-gold {
+  background: linear-gradient(
+    95deg,
+    var(--gold-200) 0%,
+    var(--gold-400) 45%,
+    var(--gold-600) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--text-dark);
+  color: var(--paper);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: var(--gold-600);
+  transform: translateY(-1px);
+}
+
+.btn-ghost-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--ink-line);
+  color: var(--text-light);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.btn-ghost-dark:hover {
+  border-color: var(--gold-400);
+  background: rgba(207, 141, 47, 0.08);
+}
+
+.btn-ghost-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--paper-line);
+  color: var(--text-dark);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.btn-ghost-light:hover {
+  border-color: var(--gold-500);
+  background: rgba(207, 141, 47, 0.08);
+}
+
+@media (max-width: 640px) {
+  .animate-marquee {
+    animation-duration: 20s;
+  }
+}
