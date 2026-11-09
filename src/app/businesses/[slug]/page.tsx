@@ -7,6 +7,7 @@ import BusinessHero from "@/components/business/BusinessHero";
 import BusinessOverview from "@/components/business/BusinessOverview";
 import BusinessHighlights from "@/components/business/BusinessHighlights";
 import BusinessGallery from "@/components/business/BusinessGallery";
+import BusinessVideo from "@/components/business/BusinessVideo";
 import BusinessCTA from "@/components/business/BusinessCTA";
 import BusinessCrossLinks from "@/components/business/BusinessCrossLinks";
 import { subsidiaries } from "@/lib/data";
@@ -58,6 +59,7 @@ export default async function BusinessPage({
         <BusinessOverview data={data} />
         <BusinessHighlights data={data} />
         <BusinessGallery data={data} />
+        {data.video && <BusinessVideo video={data.video} />}
         <BusinessCTA data={data} />
         <BusinessCrossLinks currentId={data.id} />
       </main>

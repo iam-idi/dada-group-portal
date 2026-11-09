@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
@@ -27,7 +28,7 @@ export default function Team() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 gap-px border-b hairline-light bg-paper-line sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px border-b hairline-light bg-paper-line sm:grid-cols-2 lg:grid-cols-5">
           {teamMembers.map((member, i) => (
             <Reveal key={member.id} delay={i * 0.08}>
               <Link
@@ -35,9 +36,21 @@ export default function Team() {
                 className="group flex h-full flex-col justify-between gap-10 bg-paper p-8 transition-colors hover:bg-paper-dim"
               >
                 <div className="flex items-start justify-between">
-                  <span className="text-gradient-gold flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/30 bg-ink text-sm font-semibold">
-                    {member.initials}
-                  </span>
+                  {member.photo ? (
+                    <span className="relative h-14 w-14 overflow-hidden rounded-full border border-gold-500/30">
+                      <Image
+                        src={member.photo}
+                        alt={member.name}
+                        fill
+                        sizes="56px"
+                        className="object-cover"
+                      />
+                    </span>
+                  ) : (
+                    <span className="text-gradient-gold flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/30 bg-ink text-sm font-semibold">
+                      {member.initials}
+                    </span>
+                  )}
                   <ArrowUpRight
                     size={18}
                     className="text-text-dark-muted transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold-600"

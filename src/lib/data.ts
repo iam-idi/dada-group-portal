@@ -35,6 +35,11 @@ export type Subsidiary = {
   overview: string[];
   highlights: Highlight[];
   gallery: GalleryImage[];
+  video?: {
+    src: string;
+    poster?: string;
+    caption: string;
+  };
 };
 
 export const subsidiaries: Subsidiary[] = [
@@ -92,11 +97,25 @@ export const subsidiaries: Subsidiary[] = [
         caption: "Extraction & processing coordination at an active site",
       },
       {
-        src: "/images/mining-3.jpg",
-        alt: "Close-up pile of raw, uncut opal gemstones",
-        caption: "Rough gemstones, sourced and graded before sale",
+        src: "/images/mining-processing.jpg",
+        alt: "Workers processing raw mineral concentrate by hand on-site",
+        caption: "On-site mineral processing and beneficiation",
+      },
+      {
+        src: "/images/mining-sample-1.jpg",
+        alt: "Raw copper-bearing mineral ore samples",
+        caption: "Raw ore samples, assessed before processing",
+      },
+      {
+        src: "/images/mining-sample-2.jpg",
+        alt: "Raw mica and quartz-bearing mineral rock samples",
+        caption: "Mineral-bearing rock from an active site",
       },
     ],
+    video: {
+      src: "/videos/mining-operations.mp4",
+      caption: "Mineral processing in motion on an active Dada Minings & Energies site",
+    },
   },
   {
     id: "civil",
@@ -289,6 +308,7 @@ export type TeamMember = {
   id: string;
   name: string;
   initials: string;
+  photo?: string;
   role: string;
   tagline: string;
   bio: string[];
@@ -332,6 +352,28 @@ export const teamMembers: TeamMember[] = [
     ],
     memberships: [
       "Global President, National Association of Nigerian Students in Diaspora (NANS-D)",
+    ],
+  },
+  {
+    id: "mubarak-aminu",
+    name: "Mubarak Aminu",
+    initials: "MA",
+    photo: "/images/team-mubarak-aminu.jpg",
+    role: "Managing Director",
+    tagline:
+      "Mining Entrepreneur · Mineral Processing Specialist · Strategic Minerals Executive",
+    bio: [
+      "Mubarak Aminu is a Nigerian mining entrepreneur, mineral processing specialist and business executive serving as the Managing Director of Dada Group — a company committed to advancing Nigeria's mineral resources through responsible mining, mineral processing, strategic sourcing and international mineral trade.",
+      "With nearly a decade of experience and involvement in Nigeria's mining and solid minerals sector, he has developed practical expertise across mineral exploration and sourcing, mining operations, processing, mineral beneficiation, supply-chain management and commercial negotiations.",
+      "His professional engagement spans a diverse portfolio of strategic minerals, including tin (cassiterite), tantalite, columbite, monazite, zircon, ilmenite, wolframite, gold, lithium-bearing minerals, bastnäsite, mica, copper and other industrial and critical minerals. Through his involvement in processing operations, he has gained valuable experience in ore characteristics, mineral separation, concentrate production, material specifications, grade assessment and the commercial requirements of mineral buyers and international processing industries.",
+      "Under his leadership, Dada Group is focused on building a reliable and commercially sustainable mineral supply network — connecting verified mining sources and processing operations in Nigeria with domestic and international buyers, investors, smelters and mineral processing companies. His broader vision is to contribute to the development of Nigeria's solid minerals industry by promoting value addition, responsible sourcing, operational efficiency and stronger international partnerships — connecting Nigeria's mineral wealth to global industrial opportunities.",
+    ],
+    highlights: [
+      "Mining & Mineral Sourcing — building relationships with mining communities, licensed operators and strategic suppliers",
+      "Mineral Processing & Beneficiation — transforming raw mineral resources into higher-value concentrates",
+      "Critical & Strategic Minerals — supply and development of minerals essential to manufacturing, clean energy and electronics",
+      "International Mineral Trade — offtake arrangements, export opportunities and long-term supply agreements",
+      "Investment & Strategic Partnerships — connecting local opportunities with investors across Asia and the Middle East",
     ],
   },
   {

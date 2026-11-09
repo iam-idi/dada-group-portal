@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 import Reveal from "../Reveal";
 import type { TeamMember } from "@/lib/data";
@@ -61,15 +62,31 @@ export default function TeamMemberProfile({
       <div className="relative mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16 lg:px-10 lg:py-28">
         <Reveal>
           <div className="lg:sticky lg:top-32">
-            <span
-              className={`text-gradient-gold mb-6 flex h-16 w-16 items-center justify-center rounded-full border text-base font-semibold ${
-                dark
-                  ? "border-gold-400/30 bg-white/[0.03]"
-                  : "border-gold-500/30 bg-paper-dim"
-              }`}
-            >
-              {member.initials}
-            </span>
+            {member.photo ? (
+              <span
+                className={`relative mb-6 flex h-20 w-20 overflow-hidden rounded-full border ${
+                  dark ? "border-gold-400/30" : "border-gold-500/30"
+                }`}
+              >
+                <Image
+                  src={member.photo}
+                  alt={member.name}
+                  fill
+                  sizes="80px"
+                  className="object-cover"
+                />
+              </span>
+            ) : (
+              <span
+                className={`text-gradient-gold mb-6 flex h-16 w-16 items-center justify-center rounded-full border text-base font-semibold ${
+                  dark
+                    ? "border-gold-400/30 bg-white/[0.03]"
+                    : "border-gold-500/30 bg-paper-dim"
+                }`}
+              >
+                {member.initials}
+              </span>
+            )}
             <p
               className={`eyebrow mb-3 ${
                 dark ? "text-gold-300" : "text-gold-600"
