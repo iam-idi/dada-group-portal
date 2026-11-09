@@ -330,6 +330,7 @@ export const teamMembers: TeamMember[] = [
     id: "nuhu-aminu-nuhu",
     name: "Engr. Nuhu Aminu Nuhu",
     initials: "NA",
+    photo: "/images/team-nuhu-aminu.jpg",
     role: "Founder & Group Chief Executive Officer",
     tagline: "Civil Engineer · Entrepreneur · International Development Advocate",
     bio: [
@@ -429,6 +430,7 @@ export const teamMembers: TeamMember[] = [
     id: "haruna-ibrahim-haruna",
     name: "Haruna Ibrahim Haruna",
     initials: "HI",
+    photo: "/images/team-haruna-ibrahim.jpg",
     role: "Surveying & Geoinformatics Professional",
     tagline: "Engineering Surveying · Road & Infrastructure Projects · GIS",
     bio: [
