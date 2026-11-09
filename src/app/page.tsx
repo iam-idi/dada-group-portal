@@ -6,6 +6,7 @@ import Segments from "@/components/Segments";
 import SegmentTeaser from "@/components/SegmentTeaser";
 import Pillars from "@/components/Pillars";
 import Approach from "@/components/Approach";
+import Team from "@/components/Team";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { subsidiaries } from "@/lib/data";
@@ -35,6 +36,7 @@ export default function Home() {
         ))}
         <Pillars />
         <Approach />
+        <Team />
         <CTA />
       </main>
       <Footer />

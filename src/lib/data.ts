@@ -4,6 +4,7 @@ export const navLinks = [
   { label: "Civil Contractors", href: "/businesses/civil" },
   { label: "Green Farm", href: "/businesses/agriculture" },
   { label: "About", href: "/#about" },
+  { label: "Team", href: "/team" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -274,5 +275,194 @@ export const approach = [
     title: "Sustain",
     description:
       "We build relationships and operations designed to outlast a single deal — repeat supply, repeat contracts, repeat seasons.",
+  },
+];
+
+export type TeamExperience = {
+  role: string;
+  org: string;
+  period?: string;
+  points: string[];
+};
+
+export type TeamMember = {
+  id: string;
+  name: string;
+  initials: string;
+  role: string;
+  tagline: string;
+  bio: string[];
+  highlights?: string[];
+  experience?: TeamExperience[];
+  projects?: string[];
+  skills?: string[];
+  education?: string[];
+  memberships?: string[];
+  languages?: string[];
+  contact?: {
+    email?: string;
+    phone?: string;
+  };
+};
+
+export const teamMembers: TeamMember[] = [
+  {
+    id: "nuhu-aminu-nuhu",
+    name: "Engr. Nuhu Aminu Nuhu",
+    initials: "NA",
+    role: "Founder & Group Chief Executive Officer",
+    tagline: "Civil Engineer · Entrepreneur · International Development Advocate",
+    bio: [
+      "Engr. Nuhu Aminu Nuhu is a Nigerian entrepreneur, civil engineer and international development advocate, serving as the Founder and Group Chief Executive Officer of Dada Group — a diversified Nigerian business group with interests in construction and civil engineering, agriculture, mining and energy, and international trade.",
+      "With an academic background in Civil Engineering and a Master's degree specialising in Project Management and Building Information Modelling (BIM), he brings together technical knowledge, strategic management and an entrepreneurial vision to drive sustainable business development and infrastructure growth.",
+      "He is currently pursuing a PhD in Civil Engineering at Beijing Jiaotong University (BJTU), China, where his academic interests focus on intelligent geotechnical risk assessment, railway infrastructure resilience and emerging technologies in infrastructure development. His international academic experience across Nigeria, Russia and China has strengthened his understanding of global business environments, international cooperation and cross-border partnerships.",
+      "Beyond entrepreneurship and engineering, he is actively involved in international youth leadership and institutional engagement, serving as Global President of the National Association of Nigerian Students in Diaspora (NANS-D) — providing leadership and representation for Nigerian students across the global diaspora.",
+      "His vision as Founder and Group CEO is to build a competitive, innovative and internationally connected Nigerian enterprise capable of delivering quality services, developing strategic partnerships, creating economic opportunities and contributing to sustainable development — with Dada Group committed throughout to professionalism, integrity, innovation, operational excellence and long-term value creation.",
+    ],
+    highlights: [
+      "Civil Engineering & Project Management",
+      "Building Information Modelling (BIM)",
+      "International Business Development",
+      "Youth & Diaspora Leadership",
+    ],
+    education: [
+      "PhD Candidate, Civil Engineering — Beijing Jiaotong University (BJTU), China",
+      "M.Sc. Civil Engineering — Project Management & BIM",
+      "B.Eng. Civil Engineering",
+    ],
+    memberships: [
+      "Global President, National Association of Nigerian Students in Diaspora (NANS-D)",
+    ],
+  },
+  {
+    id: "malzam-muazu-isah",
+    name: "Malzam Mu'azu Isah",
+    initials: "MI",
+    role: "Geoscientist",
+    tagline: "Geoscientist · Industry Leader · Community Builder",
+    bio: [
+      "Malzam Mu'azu Isah turns rock, data and people into results. A Nigerian geologist with over five years of field leadership at Nanomines Limited, he has worked across lead, zinc, gold, tin and columbite — from ore characterisation and resource estimation to grade control and HSE management.",
+      "He is completing an M.Sc. in Geology (Complex Data Analysis in Geosciences) at Kazan Federal University, combining seismic interpretation and machine learning with hands-on field experience in Petrel, Techlog and IP Seismic.",
+      "Beyond the technical work, Malzam leads: he is President of the Nigerian Students' Association at KFU and of NANS-Russia, and as a fluent English and conversational Russian speaker, he builds bridges between Africa, Russia and the global resource industry.",
+    ],
+    highlights: [
+      "Ore Characterisation & Resource Estimation",
+      "Grade Control & HSE Management",
+      "Seismic Interpretation & Machine Learning",
+      "Petrel, Techlog & IP Seismic",
+    ],
+    education: [
+      "M.Sc. Geology, Complex Data Analysis in Geosciences — Kazan Federal University, Russia (in progress)",
+    ],
+    memberships: [
+      "President, Nigerian Students' Association, Kazan Federal University",
+      "President, NANS-Russia",
+    ],
+    languages: ["English (fluent)", "Russian (conversational)"],
+  },
+  {
+    id: "abdulmumin-abdullah-ibrahim",
+    name: "Abdulmumin Abdullah Ibrahim",
+    initials: "AI",
+    role: "Head, Construction Division",
+    tagline:
+      "Civil Engineer · Construction & Project Management Specialist · Infrastructure Development Leader",
+    bio: [
+      "Abdulmumin Abdullah Ibrahim is a Nigerian civil engineering professional with experience in construction operations, project management and infrastructure development across Nigeria and Togo. His experience spans residential construction, foundation works, land reclamation, soil stabilisation, site supervision and construction safety.",
+      "Having served in Project Manager and Assistant Project Manager capacities, he has coordinated construction teams, monitored project schedules, tracked progress against planned milestones, managed site resources, coordinated subcontractors and overseen quality and safety inspections. His approach emphasises measurable project performance, efficient resource utilisation, timely execution and compliance with engineering standards.",
+      "He holds a Bachelor's degree in Civil Engineering from IAEC University, Togo, and is pursuing an M.Sc. in Petroleum Engineering at Kazan Federal University, Russia. As head of the Group's Construction Division, he is committed to delivering quality infrastructure, operational efficiency and sustainable, standards-compliant execution across every project.",
+    ],
+    highlights: [
+      "Residential Construction & Foundation Works",
+      "Land Reclamation & Soil Stabilisation",
+      "Site Supervision & Construction Safety",
+      "Project Scheduling & Subcontractor Coordination",
+    ],
+    education: [
+      "M.Sc. Petroleum Engineering — Kazan Federal University, Russia (in progress)",
+      "B.Eng. Civil Engineering — IAEC University, Togo",
+    ],
+  },
+  {
+    id: "haruna-ibrahim-haruna",
+    name: "Haruna Ibrahim Haruna",
+    initials: "HI",
+    role: "Surveying & Geoinformatics Professional",
+    tagline: "Engineering Surveying · Road & Infrastructure Projects · GIS",
+    bio: [
+      "Surveying and Geoinformatics professional with hands-on experience supporting road, housing, drainage and culvert construction projects, alongside GIS-based land administration work. Experienced in site surveying, construction setting-out, road horizontal and vertical alignment, elevation control, and survey data acquisition using GNSS, Total Station and levelling instruments.",
+      "Also experienced in GIS data editing and digitisation through the Kano Geographic Information System (KANGIS) land administration automation project — bringing a practical combination of field surveying, geospatial data management and construction project exposure.",
+    ],
+    highlights: [
+      "Engineering Surveying & Construction Setting-Out",
+      "Road Horizontal & Vertical Alignment, Elevation Control",
+      "GNSS, Total Station & Levelling Operations",
+      "Survey Control & Construction Data Acquisition",
+      "GIS Data Editing, Digitisation & Geospatial Management",
+      "Land Administration Records & GIS Automation Support",
+    ],
+    experience: [
+      {
+        role: "Surveyor",
+        org: "Radoc Construction",
+        period: "September 2026 – Present",
+        points: [
+          "Conducts surveying and construction data acquisition to support project execution.",
+          "Carries out setting-out activities and assists with establishing and checking construction positions.",
+          "Supports road horizontal and vertical alignment works and maintains elevation control.",
+        ],
+      },
+      {
+        role: "GIS Analyst",
+        org: "JABTEK Computer Solutions Consultancy — KANGIS Land Administration Automation",
+        period: "November 2024 – June 2025",
+        points: [
+          "Edited and managed data collected by field enumerators for the KANGIS land administration automation project.",
+          "Scanned legacy paper records and uploaded digitised files to digital storage.",
+          "Supported physical file management and tracking, including monitoring records moving into and out of the filing system.",
+        ],
+      },
+      {
+        role: "Chief Surveyor",
+        org: "Geomatic Consult Integrated Services — 200-Unit Housing Project, Adamawa State",
+        period: "2019 – 2021",
+        points: [
+          "Led surveying activities for a 200-unit housing development.",
+          "Located and established the positions of the 200 housing units to support site layout and construction.",
+        ],
+      },
+      {
+        role: "Site Manager",
+        org: "Kanwood Construction and Block Industry",
+        points: [
+          "Held site-management responsibilities within a construction and block-industry operation.",
+        ],
+      },
+    ],
+    projects: [
+      "200-unit housing development, Adamawa State — surveying and location of the housing units.",
+      "3 km road project, Danbatta, Kano State; 2 km township road, Jambulo, Kano State; township road, Doko, Garki LGA, Jigawa State.",
+      "Drainage construction, Darki town, Wudil LGA, Kano State.",
+      "Six-cell culvert project, Bebeji LGA, Kano State (ecological project).",
+    ],
+    skills: [
+      "GNSS, Total Station & Levelling Instruments",
+      "AutoCAD & Civil 3D",
+      "ArcGIS, QGIS & Landsat Imagery",
+      "Construction Setting-Out & Spatial Data Management",
+    ],
+    education: [
+      "B.Tech. Surveying and Geo-informatics — Modibbo Adama University of Technology, Yola, Nigeria (Sept 2016 – Jan 2024, Second Class Lower Division)",
+    ],
+    memberships: [
+      "Pupilage Member, Nigerian Institution of Surveyors (NIS) — June 2025 to present",
+      "Certificate of Participation, NIS Annual General Meeting, Kano — 2026",
+      "Senator representing the department, Student Representative Assembly (SRA) — 2018–2019",
+    ],
+    languages: ["English", "Hausa"],
+    contact: {
+      email: "harunaibrahimbappa@gmail.com",
+      phone: "+234 806 5171 913",
+    },
   },
 ];
