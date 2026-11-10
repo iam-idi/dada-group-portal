@@ -19,6 +19,19 @@ export type Highlight = {
   description: string;
 };
 
+export type Product = {
+  name: string;
+  image: string;
+  alt: string;
+  description: string;
+};
+
+export type VideoClip = {
+  src: string;
+  poster?: string;
+  caption: string;
+};
+
 export type Subsidiary = {
   id: string;
   name: string;
@@ -35,11 +48,8 @@ export type Subsidiary = {
   overview: string[];
   highlights: Highlight[];
   gallery: GalleryImage[];
-  video?: {
-    src: string;
-    poster?: string;
-    caption: string;
-  };
+  products?: Product[];
+  videos?: VideoClip[];
 };
 
 export const subsidiaries: Subsidiary[] = [
@@ -112,10 +122,52 @@ export const subsidiaries: Subsidiary[] = [
         caption: "Mineral-bearing rock from an active site",
       },
     ],
-    video: {
-      src: "/videos/mining-operations.mp4",
-      caption: "Mineral processing in motion on an active Dada Minings & Energies site",
-    },
+    products: [
+      {
+        name: "Gold",
+        image: "/images/mineral-gold.jpg",
+        alt: "A refined gold bar and a gold nugget being weighed on a digital scale",
+        description: "Refined and raw gold, assayed and weighed before sale.",
+      },
+      {
+        name: "Columbite",
+        image: "/images/mineral-columbite.jpg",
+        alt: "Fine black columbite mineral concentrate",
+        description:
+          "A niobium-bearing mineral, sourced alongside tantalite from Nigeria's cassiterite belt.",
+      },
+      {
+        name: "Tantalite",
+        image: "/images/mineral-tantalite.jpg",
+        alt: "Dark tantalite mineral concentrate",
+        description:
+          "A tantalum-bearing ore, processed and graded for industrial and electronics manufacturing.",
+      },
+      {
+        name: "Bastnäsite",
+        image: "/images/mineral-bastnasite.jpg",
+        alt: "Raw reddish-brown bastnäsite mineral fragments",
+        description:
+          "A rare-earth-bearing mineral, sourced and assessed for critical mineral supply chains.",
+      },
+      {
+        name: "Drill Core Samples",
+        image: "/images/mineral-core-boxes.jpg",
+        alt: "Labelled drill core samples laid out in wooden core boxes",
+        description:
+          "Logged and boxed drill core, used for geological assessment and resource estimation.",
+      },
+    ],
+    videos: [
+      {
+        src: "/videos/mining-operations.mp4",
+        caption: "Mineral processing in motion on an active Dada Minings & Energies site",
+      },
+      {
+        src: "/videos/mining-drilling-rig.mp4",
+        caption: "A diamond core drilling rig at work on an exploration site",
+      },
+    ],
   },
   {
     id: "civil",

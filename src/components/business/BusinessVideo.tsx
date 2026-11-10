@@ -1,11 +1,7 @@
 import Reveal from "../Reveal";
-import type { Subsidiary } from "@/lib/data";
+import type { VideoClip } from "@/lib/data";
 
-export default function BusinessVideo({
-  video,
-}: {
-  video: NonNullable<Subsidiary["video"]>;
-}) {
+export default function BusinessVideo({ videos }: { videos: VideoClip[] }) {
   return (
     <section className="relative bg-ink py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
@@ -16,21 +12,27 @@ export default function BusinessVideo({
           </h2>
         </Reveal>
 
-        <Reveal delay={0.08}>
-          <figure className="flex flex-col items-center">
-            <video
-              className="max-h-[70vh] w-auto max-w-full rounded-2xl"
-              src={video.src}
-              poster={video.poster}
-              controls
-              playsInline
-              preload="metadata"
-            />
-            <figcaption className="mt-4 text-center text-sm text-text-light-muted">
-              {video.caption}
-            </figcaption>
-          </figure>
-        </Reveal>
+        <div className="flex flex-wrap justify-center gap-8">
+          {videos.map((video, i) => (
+            <Reveal key={video.src} delay={i * 0.08}>
+              <figure className="w-[300px] sm:w-[360px] lg:w-[440px]">
+                <div className="h-[380px] overflow-hidden rounded-2xl sm:h-[460px] lg:h-[560px]">
+                  <video
+                    className="h-full w-full object-cover"
+                    src={video.src}
+                    poster={video.poster}
+                    controls
+                    playsInline
+                    preload="metadata"
+                  />
+                </div>
+                <figcaption className="mt-4 text-sm text-text-light-muted">
+                  {video.caption}
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
