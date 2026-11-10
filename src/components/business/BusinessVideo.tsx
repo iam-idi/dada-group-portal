@@ -17,18 +17,16 @@ export default function BusinessVideo({
         </Reveal>
 
         <Reveal delay={0.08}>
-          <figure>
-            <div className="overflow-hidden rounded-2xl">
-              <video
-                className="h-full w-full object-cover"
-                src={video.src}
-                poster={video.poster}
-                controls
-                playsInline
-                preload="metadata"
-              />
-            </div>
-            <figcaption className="mt-4 text-sm text-text-light-muted">
+          <figure className="flex flex-col items-center">
+            <video
+              className="max-h-[70vh] w-auto max-w-full rounded-2xl"
+              src={video.src}
+              poster={video.poster}
+              controls
+              playsInline
+              preload="metadata"
+            />
+            <figcaption className="mt-4 text-center text-sm text-text-light-muted">
               {video.caption}
             </figcaption>
           </figure>
