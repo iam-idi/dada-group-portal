@@ -433,6 +433,7 @@ export const teamMembers: TeamMember[] = [
     id: "malzam-muazu-isah",
     name: "Malzam Mu'azu Isah",
     initials: "MI",
+    photo: "/images/team-malzam-isah.jpg",
     role: "Geoscientist",
     tagline: "Geoscientist · Industry Leader · Community Builder",
     bio: [
