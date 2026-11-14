@@ -196,96 +196,13 @@ export default function TeamMemberProfile({
             </Reveal>
           )}
 
-          {member.experience && (
-            <Reveal delay={0.1}>
-              <div>
-                <p
-                  className={`eyebrow mb-5 ${
-                    dark ? "text-text-light-muted" : "text-text-dark-muted"
-                  }`}
-                >
-                  Experience
-                </p>
-                <div
-                  className={`space-y-8 border-t ${
-                    dark ? "border-white/10" : "border-paper-line"
-                  }`}
-                >
-                  {member.experience.map((job) => (
-                    <div
-                      key={`${job.role}-${job.org}`}
-                      className={`border-b pb-8 pt-8 ${
-                        dark ? "border-white/10" : "border-paper-line"
-                      }`}
-                    >
-                      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                        <h3
-                          className={`heading-xl text-lg ${
-                            dark ? "text-text-light" : "text-text-dark"
-                          }`}
-                        >
-                          {job.role}
-                        </h3>
-                        {job.period && (
-                          <span
-                            className={`font-mono text-xs ${
-                              dark
-                                ? "text-text-light-muted"
-                                : "text-text-dark-muted"
-                            }`}
-                          >
-                            {job.period}
-                          </span>
-                        )}
-                      </div>
-                      <p
-                        className={`mt-1 text-sm ${
-                          dark ? "text-gold-300" : "text-gold-600"
-                        }`}
-                      >
-                        {job.org}
-                      </p>
-                      <ul className="mt-4 space-y-2">
-                        {job.points.map((point, i) => (
-                          <li
-                            key={i}
-                            className={`flex items-start gap-2.5 text-sm leading-relaxed ${
-                              dark
-                                ? "text-text-light-muted"
-                                : "text-text-dark-muted"
-                            }`}
-                          >
-                            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gold-500" />
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-          )}
-
-          {member.projects && (
-            <Reveal delay={0.08}>
-              <MetaList title="Selected projects" items={member.projects} dark={dark} />
-            </Reveal>
-          )}
-
-          {(member.skills ||
-            member.education ||
-            member.memberships ||
-            member.languages) && (
+          {(member.education || member.memberships) && (
             <Reveal delay={0.1}>
               <div
                 className={`grid grid-cols-1 gap-10 border-t pt-10 sm:grid-cols-2 ${
                   dark ? "hairline-dark" : "hairline-light"
                 }`}
               >
-                {member.skills && (
-                  <MetaList title="Technical skills" items={member.skills} dark={dark} />
-                )}
                 {member.education && (
                   <MetaList title="Education" items={member.education} dark={dark} />
                 )}
@@ -295,9 +212,6 @@ export default function TeamMemberProfile({
                     items={member.memberships}
                     dark={dark}
                   />
-                )}
-                {member.languages && (
-                  <MetaList title="Languages" items={member.languages} dark={dark} />
                 )}
               </div>
             </Reveal>
